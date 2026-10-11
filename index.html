@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>James Githae Masaulu | Digital marketing portfolio</title>
+<meta name="description" content="Four digital marketing and social media concept projects by James Githae Masaulu: a social launch, a growth plan, an email funnel and a Google Ads and SEO campaign.">
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1513" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="James Githae Masaulu | Digital marketing portfolio">
+<meta property="og:description" content="Social media, email, search ads and SEO projects, plus real campaign design and data analysis work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAFAF7;
+  --surface: #FFFFFF;
+  --ink: #14191A;
+  --muted: #55605C;
+  --line: #D9DED9;
+  --green: #0E6B4F;
+  --red: #C42E26;
+  --sage: #DDEBE3;
+  --on-green: #FFFFFF;
+  --on-red: #FFFFFF;
+  --on-ink: #FFFFFF;
+  --tile-ink: #14191A;
+  --link: #0E6B4F;
+  --display: "Bricolage Grotesque", "Arial Black", Arial, sans-serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1513;
+    --surface: #17201C;
+    --ink: #EEF2EF;
+    --muted: #A5B1AB;
+    --line: #2B3832;
+    --sage: #1E2F27;
+    --tile-ink: #2A3631;
+    --link: #5CD3A6;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1513;
+  --surface: #17201C;
+  --ink: #EEF2EF;
+  --muted: #A5B1AB;
+  --line: #2B3832;
+  --sage: #1E2F27;
+  --tile-ink: #2A3631;
+  --link: #5CD3A6;
+}
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 72px); scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+img, svg { max-width: 100%; }
+a { color: var(--link); }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+}
+h1, h2, h3 {
+  font-family: var(--display);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+p { margin: 0 0 1em; max-width: 62ch; }
+.wrap { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+
+/* nav */
+.topbar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 60px; gap: 1rem; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-weight: 800; font-size: 1.15rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.topbar nav { display: flex; gap: 1.4rem; }
+.topbar nav a { color: var(--ink); text-decoration: none; font-weight: 500; padding: .4rem 0; border-bottom: 2px solid transparent; }
+.topbar nav a:hover { border-bottom-color: var(--green); }
+
+/* hero */
+.hero { padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(2.5rem, 6vw, 4.5rem); }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.hero h1 { font-size: clamp(2.5rem, 6.4vw, 5rem); font-weight: 800; }
+.hero .lede { font-size: 1.2rem; color: var(--muted); margin-top: 1.5rem; }
+.hero .lede strong { color: var(--ink); font-weight: 600; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+.btn {
+  display: inline-block;
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: .85rem 1.3rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  cursor: pointer;
+}
+.btn.primary { background: var(--ink); color: var(--bg); }
+.btn.primary:hover { background: var(--green); border-color: var(--green); color: #fff; }
+.btn.secondary { background: transparent; color: var(--ink); }
+.btn.secondary:hover { background: var(--sage); }
+
+/* feed grid */
+.feed { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tile {
+  aspect-ratio: 1;
+  padding: clamp(.9rem, 2vw, 1.4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: transform .18s ease;
+}
+.tile:hover { transform: translateY(-4px); }
+.tile .name { font-family: var(--display); font-weight: 800; font-size: clamp(1.15rem, 2.6vw, 1.7rem); line-height: 1.05; letter-spacing: -0.02em; }
+.tile .what { font-size: clamp(.8rem, 1.5vw, .95rem); line-height: 1.35; margin: .5rem 0 0; }
+.tile .chan { font-size: .8rem; font-weight: 600; margin: 0; }
+.t-green { background: var(--green); color: var(--on-green); }
+.t-red { background: var(--red); color: var(--on-red); }
+.t-ink { background: var(--tile-ink); color: var(--on-ink); }
+.t-sage { background: var(--sage); color: var(--ink); }
+.t-sage { outline: 1px solid var(--line); outline-offset: -1px; }
+
+.portrait { display: block; width: 100%; max-width: 300px; aspect-ratio: 1; object-fit: cover; border-radius: 6px; margin-top: 1.25rem; border: 1px solid var(--line); }
+button.btn { appearance: none; -webkit-appearance: none; }
+.links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+
+.data { padding: clamp(3rem, 7vw, 5rem) 0 1rem; }
+.data h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 800; }
+.data .intro { color: var(--muted); margin-top: 1rem; }
+.data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 2rem 0 0; padding: 0; list-style: none; }
+.data-item { border: 1px solid var(--line); background: var(--surface); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; gap: .5rem; }
+.data-item h3 { font-size: 1.25rem; }
+.data-item p { margin: 0; font-size: .98rem; }
+.data-item .tools { color: var(--muted); font-size: .9rem; }
+.data-item a { font-weight: 600; margin-top: auto; padding-top: .5rem; }
+
+.design { padding: clamp(3rem, 7vw, 5rem) 0 1rem; }
+.design h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 800; }
+.design .intro { color: var(--muted); margin-top: 1rem; }
+.pieces { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 340px)); gap: 1.5rem; margin-top: 2rem; align-items: start; }
+.piece { margin: 0; }
+.piece img, .piece video { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--line); background: #000; }
+.piece video { aspect-ratio: 9 / 16; object-fit: contain; max-height: 85vh; }
+.piece figcaption { margin-top: .9rem; }
+.piece h3 { font-size: 1.25rem; }
+.piece p { margin: .3rem 0 0; font-size: .98rem; color: var(--muted); }
+.profile { margin-top: clamp(2.5rem, 5vw, 3.5rem); padding-top: 2rem; border-top: 1px solid var(--line); }
+.profile h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+.profile > p { margin-top: .75rem; }
+.pages { display: flex; gap: 12px; overflow-x: auto; padding: .25rem 0 1rem; margin-top: 1.25rem; scroll-snap-type: x proximity; }
+.pages:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+.pages img { height: clamp(300px, 52vw, 460px); width: auto; flex: none; border-radius: 4px; border: 1px solid var(--line); scroll-snap-align: start; background: #fff; }
+
+/* notice */
+.notice { background: var(--sage); border-block: 1px solid var(--line); padding: 1rem 0; }
+.notice p { margin: 0; max-width: none; font-size: .98rem; }
+
+/* case studies */
+.work { padding: clamp(3rem, 7vw, 5.5rem) 0 1rem; }
+.work > .wrap > h2, .about h2, .contact h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 800; }
+.work .intro { color: var(--muted); margin-top: 1rem; }
+.case { display: grid; grid-template-columns: 300px 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); padding: clamp(2rem, 5vw, 3.5rem) 0; border-top: 1px solid var(--line); margin-top: clamp(2rem, 5vw, 3.5rem); }
+.case:first-of-type { margin-top: 2rem; }
+.case-side .swatch { width: 56px; height: 8px; border-radius: 4px; margin-bottom: 1rem; }
+.sw-green { background: var(--green); }
+.sw-red { background: var(--red); }
+.sw-ink { background: var(--ink); }
+.sw-sage { background: var(--green); opacity: .45; }
+.case-side h3 { font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 800; }
+.case-side .sub { color: var(--muted); margin-top: .5rem; }
+.facts { margin: 1.5rem 0 0; }
+.facts dt { font-weight: 600; font-size: .9rem; color: var(--muted); margin-top: 1rem; }
+.facts dd { margin: .15rem 0 0; }
+.case-body h4 { font-family: var(--display); font-size: 1.25rem; letter-spacing: -0.01em; margin: 2rem 0 .6rem; }
+.case-body h4:first-child { margin-top: 0; }
+.case-body ul, .case-body ol { padding-left: 1.25rem; margin: 0 0 1em; max-width: 62ch; }
+.case-body li { margin-bottom: .4rem; }
+.kpis { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; list-style: none; margin: 0 0 1em; }
+.kpis li { border: 1.5px solid var(--ink); border-radius: 999px; padding: .3rem .9rem; font-size: .95rem; margin: 0; }
+.table-scroll { overflow-x: auto; max-width: 100%; margin-bottom: 1em; }
+table { border-collapse: collapse; width: 100%; min-width: 420px; }
+th, td { text-align: left; padding: .6rem .8rem; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; font-size: .92rem; color: var(--muted); }
+blockquote.ad { margin: 0 0 1em; padding: 1rem 1.2rem; background: var(--surface); border-left: 4px solid var(--green); max-width: 62ch; }
+blockquote.ad b { display: block; font-family: var(--display); font-size: 1.1rem; }
+
+/* about */
+.about { background: var(--surface); border-block: 1px solid var(--line); padding: clamp(3rem, 7vw, 5rem) 0; margin-top: clamp(2rem, 5vw, 4rem); }
+.about .wrap { display: grid; grid-template-columns: 300px 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); }
+.about h3 { font-size: 1.25rem; margin: 1.5rem 0 .6rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; list-style: none; margin: 0; }
+.chips li { background: var(--sage); border-radius: 6px; padding: .3rem .75rem; font-size: .95rem; }
+
+/* contact */
+.contact { padding: clamp(3rem, 7vw, 5rem) 0 clamp(3rem, 7vw, 4rem); }
+.contact p { margin-top: 1rem; color: var(--muted); }
+.contact .mail { display: inline-block; font-family: var(--display); font-weight: 800; font-size: clamp(1.4rem, 4.5vw, 2.6rem); letter-spacing: -0.02em; color: var(--ink); text-decoration: underline; text-decoration-thickness: 4px; text-decoration-color: var(--red); text-underline-offset: 6px; margin-top: 1.25rem; word-break: break-all; }
+.contact .mail:hover { color: var(--green); }
+footer { border-top: 1px solid var(--line); padding: 1.5rem 0; font-size: .92rem; color: var(--muted); }
+footer p { margin: 0; max-width: none; }
+
+@media (max-width: 860px) {
+  .hero .wrap, .case, .about .wrap { grid-template-columns: 1fr; }
+  .case-side .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5rem; }
+}
+@media (max-width: 640px) {
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 88px); }
+  .topbar .wrap { flex-direction: column; align-items: flex-start; gap: 0; padding-top: .35rem; min-height: 0; }
+  .topbar nav { width: 100%; gap: 1.1rem; overflow-x: auto; white-space: nowrap; }
+  .topbar nav a { padding: .6rem 0; }
+  .actions, .links { flex-direction: column; }
+  .actions .btn, .links .btn, .profile .btn { width: 100%; text-align: center; }
+  .tile { aspect-ratio: auto; min-height: 165px; }
+  table { min-width: 0; }
+  th, td { padding: .5rem .45rem; }
+  .pieces { grid-template-columns: minmax(0, 340px); }
+}
+@media (max-width: 480px) {
+  .case-side .facts { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .tile { transition: none; }
+  .tile:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">James Githae Masaulu</a>
+    <nav aria-label="Main">
+      <a href="#work">Marketing</a>
+      <a href="#design">Social media</a>
+      <a href="#data">Data work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>I plan social media and digital campaigns that people act on.</h1>
+        <p class="lede"><strong>Four campaign projects</strong> covering social media, email, search ads and SEO. Each one has a goal, an audience, a plan and the numbers I would track.</p>
+        <div class="actions">
+          <a class="btn primary" href="#work">Read the projects</a>
+          <a class="btn secondary" href="assets/James-G-Masaulu-CV-Digital-Marketing.pdf" download>Download CV</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/james-masaulu-0b065a282" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="feed" aria-label="Project index">
+        <a class="tile t-green" href="#kahawa">
+          <div><div class="name">Kahawa Corner</div><p class="what">Launch campaign for a coffee shop</p></div>
+          <p class="chan">Instagram, TikTok, WhatsApp</p>
+        </a>
+        <a class="tile t-red" href="#mtumba">
+          <div><div class="name">Mtumba Chic</div><p class="what">Growth plan for a thrift fashion store</p></div>
+          <p class="chan">Instagram, TikTok</p>
+        </a>
+        <a class="tile t-ink" href="#urban">
+          <div><div class="name">Urban Gadgets KE</div><p class="what">Email funnel for an online store</p></div>
+          <p class="chan">Mailchimp, Brevo</p>
+        </a>
+        <a class="tile t-sage" href="#bright">
+          <div><div class="name">BrightMinds Tutors</div><p class="what">Google Ads and SEO for a tutoring service</p></div>
+          <p class="chan">Search ads, Google Business Profile</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="notice">
+    <div class="wrap">
+      <p><strong>About these projects:</strong> the four marketing projects below are concept projects for fictional brands. Every figure in them is a target I set for the plan, not a result.</p>
+    </div>
+  </div>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <h2>Marketing projects</h2>
+      <p class="intro">Each project follows the same path: the problem, the audience, the plan, and how success is measured.</p>
+
+      <!-- Project 1 -->
+      <article class="case" id="kahawa">
+        <div class="case-side">
+          <div class="swatch sw-green"></div>
+          <h3>Kahawa Corner</h3>
+          <p class="sub">Social media launch campaign for a new specialty coffee shop</p>
+          <dl class="facts">
+            <dt>Goal</dt><dd>Build awareness and drive foot traffic in the first 60 days</dd>
+            <dt>Audience</dt><dd>Students and young professionals, 18 to 35, active on Instagram and TikTok</dd>
+            <dt>Budget</dt><dd>KES 15,000 in paid boosts on Reels and Stories</dd>
+            <dt>Platforms</dt><dd>Instagram (main), TikTok (reach), WhatsApp Business (orders and loyalty)</dd>
+          </dl>
+        </div>
+        <div class="case-body">
+          <h4>Content pillars</h4>
+          <ul>
+            <li>Behind the scenes: 35%</li>
+            <li>Product shots and reels: 30%</li>
+            <li>Customer-made content: 20%</li>
+            <li>Promotions: 15%</li>
+          </ul>
+          <h4>Execution</h4>
+          <ol>
+            <li><b>Week 1:</b> Teaser posts and a 7-day countdown to opening.</li>
+            <li><b>Week 2:</b> Opening-day giveaway: tag 2 friends to win a free month of coffee.</li>
+            <li><b>Weeks 3 to 8:</b> Three reels a week, a Friday "Barista Picks" series, and a student discount code.</li>
+          </ol>
+          <h4>Targets</h4>
+          <ul class="kpis">
+            <li>2,000 followers</li>
+            <li>5% engagement rate</li>
+            <li>300 discount-code redemptions</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="case" id="mtumba">
+        <div class="case-side">
+          <div class="swatch sw-red"></div>
+          <h3>Mtumba Chic</h3>
+          <p class="sub">Instagram and TikTok growth plan for an online secondhand fashion store</p>
+          <dl class="facts">
+            <dt>Goal</dt><dd>Grow from 500 to 5,000 followers and reach 100 sales a month through DMs</dd>
+            <dt>Positioning</dt><dd>Sustainable, affordable, one-of-a-kind style</dd>
+            <dt>Tools</dt><dd>Canva, CapCut, Meta Business Suite, Linktree</dd>
+          </dl>
+        </div>
+        <div class="case-body">
+          <h4>Growth tactics</h4>
+          <ul>
+            <li>Collaborations with 5 micro-influencers (5K to 20K followers).</li>
+            <li>A referral discount for customers who bring a friend.</li>
+            <li>Posting at peak hours, 7 to 9 PM.</li>
+            <li>Content series: outfit transformations, "Thrift Haul Tuesday", styling tips, customer try-ons.</li>
+          </ul>
+          <h4>Sample two-week content calendar</h4>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Day</th><th>Format</th><th>Idea</th></tr></thead>
+              <tbody>
+                <tr><td>Monday</td><td>Reel</td><td>One jacket styled 3 ways</td></tr>
+                <tr><td>Wednesday</td><td>Carousel</td><td>"5 thrift finds under KES 1,000"</td></tr>
+                <tr><td>Friday</td><td>Story poll</td><td>"Which outfit should we restock?"</td></tr>
+                <tr><td>Sunday</td><td>Live</td><td>Q&amp;A and flash sale</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Measures</h4>
+          <ul class="kpis">
+            <li>Follower growth rate</li>
+            <li>Reach</li>
+            <li>Saves and shares</li>
+            <li>DM-to-sale conversion</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="case" id="urban">
+        <div class="case-side">
+          <div class="swatch sw-ink"></div>
+          <h3>Urban Gadgets KE</h3>
+          <p class="sub">Email marketing and sales funnel for an online electronics accessories store</p>
+          <dl class="facts">
+            <dt>Goal</dt><dd>Increase repeat purchases and recover abandoned carts</dd>
+            <dt>Tools</dt><dd>Mailchimp or Brevo (both have free plans)</dd>
+          </dl>
+        </div>
+        <div class="case-body">
+          <h4>The funnel</h4>
+          <ol>
+            <li><b>Awareness:</b> Facebook and Instagram ads, plus SEO blog posts.</li>
+            <li><b>Lead capture:</b> 10% off a first order in exchange for an email address.</li>
+            <li><b>Nurture:</b> An automated welcome series.</li>
+            <li><b>Conversion:</b> Abandoned-cart emails and limited-time offers.</li>
+            <li><b>Retention:</b> Review requests after purchase and loyalty rewards.</li>
+          </ol>
+          <h4>Welcome sequence</h4>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>When</th><th>Email</th></tr></thead>
+              <tbody>
+                <tr><td>Instantly</td><td>"Welcome! Here's your 10% code"</td></tr>
+                <tr><td>Day 2</td><td>Best-sellers and customer reviews</td></tr>
+                <tr><td>Day 4</td><td>"How to choose the right power bank" (educational)</td></tr>
+                <tr><td>Day 7</td><td>"Your code expires tonight" (urgency)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Subject lines to A/B test</h4>
+          <ul>
+            <li>A: "You left something behind 👀"</li>
+            <li>B: "Your cart is waiting (and so is 10% off)"</li>
+          </ul>
+          <h4>Targets</h4>
+          <ul class="kpis">
+            <li>Open rate above 35%</li>
+            <li>Click rate above 3%</li>
+            <li>Cart recovery of 10 to 15%</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="case" id="bright">
+        <div class="case-side">
+          <div class="swatch sw-sage"></div>
+          <h3>BrightMinds Tutors</h3>
+          <p class="sub">Google Ads and SEO lead generation for a private tutoring service</p>
+          <dl class="facts">
+            <dt>Goal</dt><dd>50 qualified leads a month from parents</dd>
+            <dt>Ad budget</dt><dd>KES 500 a day, with negative keywords to cut wasted spend</dd>
+            <dt>Campaign type</dt><dd>Search ads with location targeting</dd>
+          </dl>
+        </div>
+        <div class="case-body">
+          <h4>SEO plan</h4>
+          <ul>
+            <li><b>Keywords:</b> "KCSE revision tutors", "home tutors near me", "math tutor for primary school".</li>
+            <li><b>On the page:</b> An optimised landing page, blog posts such as "How to Prepare for KCSE in 90 Days", and a Google Business Profile.</li>
+            <li><b>Off the page:</b> Local directory listings and backlinks from parent groups.</li>
+          </ul>
+          <h4>Sample search ad</h4>
+          <blockquote class="ad">
+            <b>Top-Rated KCSE Tutors | Book a Free Trial</b>
+            Qualified teachers. Flexible schedules. Boost your child's grades.
+          </blockquote>
+          <h4>Landing page</h4>
+          <p>A clear headline, testimonials, a short enquiry form, and a click-to-WhatsApp button.</p>
+          <h4>Targets</h4>
+          <ul class="kpis">
+            <li>Cost per lead below KES 300</li>
+            <li>Conversion rate above 8%</li>
+            <li>Top-3 Google ranking for 5 keywords</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="design" id="design">
+    <div class="wrap">
+      <h2>Social media work</h2>
+      <p class="intro">Real social media work, separate from the concept projects above. I designed the Just Growth logo, and I designed and ran the campaigns.</p>
+      <div class="pieces">
+        <figure class="piece">
+          <img alt="Mazingira Day poster: a hand holding a seedling in soil beside a map of Kenya inside a glass bubble, with the Just Growth and University of Nairobi marks" src="assets/mazingira-day-poster.jpg">
+          <figcaption>
+            <h3>Mazingira Day post</h3>
+            <p>Poster I designed for Mazingira Day, 10 October 2026, with the Just Growth logo I designed and the University of Nairobi crest.</p>
+          </figcaption>
+        </figure>
+        <figure class="piece">
+          <video controls playsinline preload="metadata" poster="assets/just-growth-reel-poster.jpg" src="assets/just-growth-reel.mp4"></video>
+          <figcaption>
+            <h3>Customer satisfaction reel</h3>
+            <p>A 15-second vertical video I made for Just Growth about customer satisfaction, ending on the logo.</p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="profile">
+        <h3>MAK'S Tech Ventures company profile</h3>
+        <p>An eight-page company profile I designed for MAK'S Tech Ventures Ltd, a Nairobi supplier of POS systems, ETR and eTIMS tax devices, banking equipment and security systems. It covers who they are, their products and services, the customers they serve, testimonials and a contact page. The company's contact details are hidden in this copy.</p>
+        <a class="btn secondary" href="assets/MAKS-Tech-Ventures-Company-Profile.pdf" download>Download the profile (PDF)</a>
+        <div class="pages" tabindex="0" role="region" aria-label="Pages of the company profile, scroll sideways">
+          <img loading="lazy" alt="Page 1 of the MAK'S Tech Ventures company profile" src="assets/maks-profile-page-1.jpg">
+          <img loading="lazy" alt="Page 2 of the MAK'S Tech Ventures company profile" src="assets/maks-profile-page-2.jpg">
+          <img loading="lazy" alt="Page 3 of the MAK'S Tech Ventures company profile" src="assets/maks-profile-page-3.jpg">
+          <img loading="lazy" alt="Page 4 of the MAK'S Tech Ventures company profile" src="assets/maks-profile-page-4.jpg">
+          <img loading="lazy" alt="Page 5 of the MAK'S Tech Ventures company profile" src="assets/maks-profile-page-5.jpg">
+          <img loading="lazy" alt="Page 6 of the MAK'S Tech Ventures company profile" src="assets/maks-profile-page-6.jpg">
+          <img loading="lazy" alt="Page 7 of the MAK'S Tech Ventures company profile" src="assets/maks-profile-page-7.jpg">
+          <img loading="lazy" alt="Page 8 of the MAK'S Tech Ventures company profile" src="assets/maks-profile-page-8.jpg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="data" id="data">
+    <div class="wrap">
+      <h2>Data work</h2>
+      <p class="intro">Dashboards and SQL analysis that turn raw data into findings. Most link to their GitHub repository.</p>
+      <ul class="data-grid">
+        <li class="data-item">
+          <h3>Retail Sales Dashboard</h3>
+          <p>Analysed more than 10,000 retail transactions for sales trends, seasonality, product performance and customer segments, then built a KPI dashboard.</p>
+          <p class="tools">Excel, PivotTables, dashboard</p>
+          <a href="https://github.com/james2025-stack" target="_blank" rel="noopener">See my GitHub</a>
+        </li>
+        <li class="data-item">
+          <h3>Coffee Sales Analysis</h3>
+          <p>Found trends in products, sales patterns and customers, and presented the results in a dashboard.</p>
+          <p class="tools">Excel, PivotTables, dashboard</p>
+          <a href="https://github.com/james2025-stack/EXCEL_COFFEE_SALES" target="_blank" rel="noopener">View on GitHub</a>
+        </li>
+        <li class="data-item">
+          <h3>Netflix Data Analysis</h3>
+          <p>Analysed content by type, rating, release year, country and director using joins, subqueries, aggregation and CTEs.</p>
+          <p class="tools">SQL</p>
+          <a href="https://github.com/james2025-stack/NETFLIX_SQL_P1" target="_blank" rel="noopener">View on GitHub</a>
+        </li>
+        <li class="data-item">
+          <h3>UK Road Accident Analysis</h3>
+          <p>Compared accident and casualty patterns across urban and rural areas and different road conditions, with visual dashboards.</p>
+          <p class="tools">Excel, dashboard</p>
+          <a href="https://github.com/james2025-stack/UK-Road-accident" target="_blank" rel="noopener">View on GitHub</a>
+        </li>
+        <li class="data-item">
+          <h3>SQL Data Analysis Project</h3>
+          <p>Cleaned, transformed and analysed structured data using joins, CTEs, subqueries and conditional logic, and presented the findings in a business format.</p>
+          <p class="tools">SQL</p>
+          <a href="https://github.com/james2025-stack/SQL_PROJECT_P1" target="_blank" rel="noopener">View on GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div><h2>About</h2><img class="portrait" alt="Portrait of James Githae Masaulu smiling, wearing a grey blazer over a black shirt" width="300" height="300" src="assets/james-portrait.jpg"></div>
+      <div>
+        <p>I'm James, a Bachelor of Arts student in Economics and Mathematics at the University of Nairobi. I'm building a career in digital marketing, and I bring a habit of working from numbers: set a target, pick the metric, check what happened.</p>
+        <p>I hold a Coursera Professional Certificate in Digital Marketing and E-commerce and a Data Analysis certificate from the ICT Authority.</p>
+        <h3>Tools and skills</h3>
+        <ul class="chips">
+          <li>Social media strategy</li>
+          <li>Content calendars</li>
+          <li>Email marketing</li>
+          <li>Google Ads</li>
+          <li>SEO</li>
+          <li>A/B testing</li>
+          <li>Canva</li>
+          <li>CapCut</li>
+          <li>Meta Business Suite</li>
+          <li>Mailchimp</li>
+          <li>Brevo</li>
+          <li>SQL</li>
+          <li>Excel</li>
+          <li>Power BI</li>
+          <li>Data cleaning</li>
+          <li>Dashboards</li>
+        </ul>
+        <h3>Education</h3>
+        <p>Bachelor of Arts in Economics and Mathematics, University of Nairobi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Let's talk</h2>
+      <p>Hiring for a digital marketing or social media role, or an internship? Send me a message and I'll reply with my CV.</p>
+      <a class="mail" href="mailto:jamesgithae849@gmail.com?subject=Digital%20marketing%20opportunity">jamesgithae849@gmail.com</a>
+      <div class="links">
+        <a class="btn primary" href="assets/James-G-Masaulu-CV-Digital-Marketing.pdf" download>Download CV</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/james-masaulu-0b065a282" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn secondary" href="https://github.com/james2025-stack" target="_blank" rel="noopener">More work on GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>James Githae Masaulu, Nairobi. The four marketing projects are concept work for fictional brands.</p>
+  </div>
+</footer>
+
+</body>
+</html>
